@@ -1,0 +1,28 @@
+### A) GET /welcome (OK)
+GET http://localhost:8080/welcome?name=Saviola
+
+### A) GET /welcome (400)
+GET http://localhost:8080/welcome
+
+### B) POST /students (201)
+POST http://localhost:8080/students
+Content-Type: application/json
+
+[
+  {"Reference": "REF001", "FirstName": "Jean", "LastName": "Dupont", "Age": 20}
+]
+
+### C) GET /students text/plain
+GET http://localhost:8080/students
+Accept: text/plain
+
+### C) GET /students JSON
+GET http://localhost:8080/students
+Accept: application/json
+
+### C) GET /students sans Accept (400)
+GET http://localhost:8080/students
+
+### C) GET /students mauvais format (501)
+GET http://localhost:8080/students
+Accept: text/xml
